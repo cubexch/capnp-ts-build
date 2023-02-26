@@ -1,17 +1,17 @@
 {
-  "author": "jdiaz5513",
+  "author": "quarkqbe",
   "bugs": {
-    "url": "https://github.com/jdiaz5513/capnp-ts/issues"
+    "url": "https://github.com/quarkqbe/capnp-ts-build/issues"
   },
   "dependencies": {
     "debug": "^4.3.1",
     "tslib": "^2.2.0"
   },
-  "description": "Strongly typed Cap'n Proto implementation for the browser and Node.js using TypeScript",
+  "description": "Fork from jdiaz5513 - Strongly typed Cap'n Proto implementation for the browser and Node.js using TypeScript",
   "engines": {
     "node": ">=10.4.0"
   },
-  "homepage": "https://github.com/jdiaz5513/capnp-ts#readme",
+  "homepage": "https://github.com/quarkqbe/capnp-ts-build#readme",
   "keywords": [
     "capnp",
     "rpc",
@@ -19,11 +19,11 @@
   ],
   "license": "MIT",
   "main": "./src/index.js",
-  "name": "capnp-ts",
+  "name": "@cube-xyz/capnp-ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jdiaz5513/capnp-ts.git"
+    "url": "git+https://github.com/quarkqbe/capnp-ts-build.git"
   },
   "types": "./src/index.d.ts",
-  "version": "0.7.0"
+  "version": "0.8.0"
 }
