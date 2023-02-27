@@ -3,7 +3,7 @@
  * @author jdiaz5513
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ObjectSize = exports.readRawPointer = exports.Message = exports.ListElementSize = void 0;
+exports.ObjectSize = exports.readMessages = exports.readMessage = exports.readRawPointer = exports.Message = exports.ListElementSize = void 0;
 const tslib_1 = require("tslib");
 tslib_1.__exportStar(require("./mask"), exports);
 var list_element_size_1 = require("./list-element-size");
@@ -11,6 +11,8 @@ Object.defineProperty(exports, "ListElementSize", { enumerable: true, get: funct
 var message_1 = require("./message");
 Object.defineProperty(exports, "Message", { enumerable: true, get: function () { return message_1.Message; } });
 Object.defineProperty(exports, "readRawPointer", { enumerable: true, get: function () { return message_1.readRawPointer; } });
+Object.defineProperty(exports, "readMessage", { enumerable: true, get: function () { return message_1.readMessage; } });
+Object.defineProperty(exports, "readMessages", { enumerable: true, get: function () { return message_1.readMessages; } });
 var object_size_1 = require("./object-size");
 Object.defineProperty(exports, "ObjectSize", { enumerable: true, get: function () { return object_size_1.ObjectSize; } });
 tslib_1.__exportStar(require("./pointers/index"), exports);

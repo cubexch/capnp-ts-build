@@ -3,12 +3,14 @@
  * @author jdiaz5513
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getUint8Mask = exports.getUint64Mask = exports.getUint32Mask = exports.getUint16Mask = exports.getInt8Mask = exports.getInt64Mask = exports.getInt32Mask = exports.getInt16Mask = exports.getFloat64Mask = exports.getFloat32Mask = exports.getBitMask = exports.Void = exports.VoidList = exports.Uint8List = exports.Uint64List = exports.Uint32List = exports.Uint16List = exports.TextList = exports.Text = exports.Struct = exports.Pointer = exports.PointerType = exports.PointerList = exports.Orphan = exports.List = exports.InterfaceList = exports.Interface = exports.Int8List = exports.Int64List = exports.Int32List = exports.Int16List = exports.Float64List = exports.Float32List = exports.DataList = exports.Data = exports.CompositeList = exports.BoolList = exports.AnyPointerList = exports.readRawPointer = exports.ObjectSize = exports.Message = exports.ListElementSize = void 0;
+exports.getUint8Mask = exports.getUint64Mask = exports.getUint32Mask = exports.getUint16Mask = exports.getInt8Mask = exports.getInt64Mask = exports.getInt32Mask = exports.getInt16Mask = exports.getFloat64Mask = exports.getFloat32Mask = exports.getBitMask = exports.Void = exports.VoidList = exports.Uint8List = exports.Uint64List = exports.Uint32List = exports.Uint16List = exports.TextList = exports.Text = exports.Struct = exports.Pointer = exports.PointerType = exports.PointerList = exports.Orphan = exports.List = exports.InterfaceList = exports.Interface = exports.Int8List = exports.Int64List = exports.Int32List = exports.Int16List = exports.Float64List = exports.Float32List = exports.DataList = exports.Data = exports.CompositeList = exports.BoolList = exports.AnyPointerList = exports.readMessages = exports.readMessage = exports.readRawPointer = exports.ObjectSize = exports.Message = exports.ListElementSize = void 0;
 var serialization_1 = require("./serialization");
 Object.defineProperty(exports, "ListElementSize", { enumerable: true, get: function () { return serialization_1.ListElementSize; } });
 Object.defineProperty(exports, "Message", { enumerable: true, get: function () { return serialization_1.Message; } });
 Object.defineProperty(exports, "ObjectSize", { enumerable: true, get: function () { return serialization_1.ObjectSize; } });
 Object.defineProperty(exports, "readRawPointer", { enumerable: true, get: function () { return serialization_1.readRawPointer; } });
+Object.defineProperty(exports, "readMessage", { enumerable: true, get: function () { return serialization_1.readMessage; } });
+Object.defineProperty(exports, "readMessages", { enumerable: true, get: function () { return serialization_1.readMessages; } });
 Object.defineProperty(exports, "AnyPointerList", { enumerable: true, get: function () { return serialization_1.AnyPointerList; } });
 Object.defineProperty(exports, "BoolList", { enumerable: true, get: function () { return serialization_1.BoolList; } });
 Object.defineProperty(exports, "CompositeList", { enumerable: true, get: function () { return serialization_1.CompositeList; } });

@@ -113,6 +113,8 @@ export interface CreateMessageOptions {
     singleSegment?: boolean;
 }
 export declare function initMessage(src?: AnyArena | ArrayBufferView | ArrayBuffer, packed?: boolean, singleSegment?: boolean): _Message;
+export declare function readMessage(buf: ArrayBuffer): [Message, number];
+export declare function readMessages(bytes: ArrayBuffer): Array<Message>;
 /**
  * Given an _unpacked_ message with a segment framing header, this will generate an ArrayBuffer for each segment in
  * the message.

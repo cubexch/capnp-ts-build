@@ -3,7 +3,7 @@
  * @author jdiaz5513
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getStreamFrame = exports.toPackedArrayBuffer = exports.toArrayBuffer = exports.setRoot = exports.readRawPointer = exports.initRoot = exports.getSegment = exports.getRoot = exports.dump = exports.allocateSegment = exports.preallocateSegments = exports.getFramedSegments = exports.initMessage = exports.Message = void 0;
+exports.getStreamFrame = exports.toPackedArrayBuffer = exports.toArrayBuffer = exports.setRoot = exports.readRawPointer = exports.initRoot = exports.getSegment = exports.getRoot = exports.dump = exports.allocateSegment = exports.preallocateSegments = exports.getFramedSegments = exports.readMessages = exports.readMessage = exports.initMessage = exports.Message = void 0;
 const tslib_1 = require("tslib");
 const debug_1 = tslib_1.__importDefault(require("debug"));
 const constants_1 = require("../constants");
@@ -171,6 +171,36 @@ function initMessage(src, packed = true, singleSegment = false) {
     };
 }
 exports.initMessage = initMessage;
+function readMessage(buf) {
+    const dv = new DataView(buf);
+    const segmentCount = dv.getUint32(0, true) + 1;
+    let byteOffset = 4 + segmentCount * 4;
+    byteOffset += byteOffset % 8;
+    if (byteOffset + segmentCount * 4 > buf.byteLength) {
+        throw new Error('invalid frame header');
+    }
+    for (let i = 0; i < segmentCount; i++) {
+        const byteLength = dv.getUint32(4 + i * 4, true) * 8;
+        if (byteOffset + byteLength > buf.byteLength) {
+            throw new Error('invalid frame header');
+        }
+        byteOffset += byteLength;
+    }
+    return [new Message(buf.slice(0, byteOffset), false), byteOffset];
+}
+exports.readMessage = readMessage;
+function readMessages(bytes) {
+    const buf = (0, packing_1.unpack)(bytes);
+    let byteOffset = 0;
+    const messages = [];
+    while (byteOffset < buf.byteLength) {
+        const [message, bytesRead] = readMessage(buf.slice(byteOffset));
+        messages.push(message);
+        byteOffset += bytesRead;
+    }
+    return messages;
+}
+exports.readMessages = readMessages;
 /**
  * Given an _unpacked_ message with a segment framing header, this will generate an ArrayBuffer for each segment in
  * the message.
