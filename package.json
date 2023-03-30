@@ -25,5 +25,5 @@
     "url": "git+https://github.com/cubexch/capnp-ts-build.git"
   },
   "types": "./src/index.d.ts",
-  "version": "0.9.0"
+  "version": "0.9.1"
 }
